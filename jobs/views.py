@@ -1,13 +1,7 @@
-from rest_framework import generics
-from rest_framework import filters
 from .models import Job
 from .serializers import JobSerializer
-
-
+from django.shortcuts import render
 from rest_framework import generics, filters
-
-from .models import Job
-from .serializers import JobSerializer
 
 
 class JobListAPIView(generics.ListAPIView):
@@ -46,3 +40,16 @@ class JobDetailAPIView(generics.RetrieveAPIView):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
 
+
+def home(request):
+    """
+    Render the main JobPulse frontend page.
+    """
+    return render(request, "jobs/index.html")
+
+
+def job_detail_page(request, pk):
+    """
+    Render the page used to display details for a single job.
+    """
+    return render(request, "jobs/job_detail.html")

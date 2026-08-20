@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobPulse</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- JobPulse header -->
+    <header class="site-header">
+        <div class="container">
+            <h1>JobPulse</h1>
+            <p>Find your next opportunity.</p>
+        </div>
+    </header>
+
+    <!-- Main page content -->
+    <main class="container">
+
+        <!-- Search and filtering section -->
+        <section class="hero">
+            <h2>Find Jobs That Match Your Skills</h2>
+
+            <p>
+                Search through job opportunities collected from trusted sources.
+            </p>
+
+            <div class="search-box">
+
+                <!-- Search by job title, company, or location -->
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search jobs, companies..."
+                >
+
+                <!-- Filter jobs by location -->
+                <input
+                    type="text"
+                    id="location-input"
+                    placeholder="Location..."
+                >
+
+                <!-- Start the search -->
+                <button id="search-button">
+                    Search
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- Job listings section -->
+        <section class="jobs-section">
+
+            <h2>Available Jobs</h2>
+
+            <!-- JavaScript inserts job cards here -->
+            <div id="jobs-container">
+                <p>Loading jobs...</p>
+            </div>
+
+            <!-- Pagination controls -->
+            <div class="pagination">
+
+                <button id="previous-button" disabled>
+                    Previous
+                </button>
+
+                <span id="page-info">
+                    Page 1
+                </span>
+
+                <button id="next-button">
+                    Next
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Main JavaScript file -->
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

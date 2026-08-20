@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Details | JobPulse</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>JobPulse</h1>
+            <p>Find your next opportunity.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <a href="/" class="back-link">
+            ← Back to Jobs
+        </a>
+
+        <section id="job-details" class="job-details">
+            <p>Loading job details...</p>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/job_detail.js' %}"></script>
+
+</body>
+</html>

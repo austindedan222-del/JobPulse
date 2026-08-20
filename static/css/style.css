@@ -1,0 +1,265 @@
+/* Global page setup */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Header */
+
+.site-header {
+    background: #111827;
+    color: white;
+    padding: 25px 0;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.site-header p {
+    margin: 5px 0 0;
+    color: #d1d5db;
+}
+
+
+/* Hero section */
+
+.hero {
+    padding: 50px 0 30px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    line-height: 1.6;
+}
+
+
+/* Search and filter area */
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Jobs section */
+
+.jobs-section {
+    padding: 20px 0 50px;
+}
+
+.jobs-section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Job cards*/
+
+.job-card {
+    background: white;
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.job-card h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.job-card p {
+    margin: 7px 0;
+    line-height: 1.5;
+}
+
+.job-card a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+.job-card a:hover {
+    background: #1d4ed8;
+}
+
+
+/*Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.pagination button {
+    padding: 9px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #f3f4f6;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#page-info {
+    font-weight: bold;
+}
+
+
+/*Job details page*/
+
+.back-link {
+    display: inline-block;
+    margin: 25px 0;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.job-details {
+    background: white;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.job-details h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.job-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.apply-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 18px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.apply-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding-top: 30px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+    }
+
+    .job-card {
+        padding: 18px;
+    }
+
+    .job-card h3 {
+        font-size: 18px;
+    }
+
+    .pagination {
+        gap: 10px;
+    }
+
+    .job-details {
+        padding: 20px;
+    }
+
+    .job-details h2 {
+        font-size: 23px;
+    }
+}
