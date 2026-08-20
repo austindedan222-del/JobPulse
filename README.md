@@ -1,52 +1,43 @@
 # JobPulse
 
-JobPulse is a backend application built with Django that collects job listings from the Python.org Job Board, stores them in a database, and makes them available through a REST API.
+JobPulse is a Django-based job search application that collects job listings from the Python.org Job Board and makes them available through a simple web interface and REST API.
 
-I built this project to strengthen my backend development skills by working on a real-world problem. It combines web scraping, database management, and API development into a single application. The goal was to create a clean and maintainable backend that automatically collects job listings and provides an easy way to access them through an API.
-
-The scraper retrieves job postings from the Python.org Job Board, extracts important details such as the job title, company, location, and job link, then stores them in the database while preventing duplicate entries.
-
-## Project Objectives
-
-The objectives of this project were to:
-
-* Learn how to build a web scraper with BeautifulSoup.
-* Design a backend application using Django.
-* Build REST APIs with Django REST Framework.
-* Store and manage scraped data in a database.
-* Apply clean project structure and separation of responsibilities.
+I built JobPulse to gain practical experience with backend development, web scraping, databases, and API development while creating something that people can actually use to find jobs.
 
 ## Features
 
-* Scrapes live job listings from the Python.org Job Board.
-* Stores job information in a Django database.
-* Prevents duplicate job records.
-* Provides a REST API for accessing stored jobs.
-* Supports searching by job title, company, or location.
-* Supports filtering jobs by location.
-* Includes a Django Admin dashboard for managing job records.
-* Uses a custom Django management command to run the scraper.
+- Scrapes job listings from the Python.org Job Board.
+- Stores job listings in SQLite.
+- Prevents duplicate job records.
+- Search jobs by title, company, or location.
+- Filter jobs by location.
+- Paginate through job listings.
+- View individual job details.
+- Apply through the original job listing.
+- REST API for accessing job data.
+- Django Admin for managing job listings.
+- Custom management command for running the scraper.
 
-## Technologies Used
+## Built With
 
-* Python 3.12
-* Django
-* Django REST Framework
-* BeautifulSoup4
-* Requests
-* SQLite
-* Git
-* GitHub
+- Python 3.12
+- Django
+- Django REST Framework
+- BeautifulSoup4
+- Requests
+- SQLite
+- HTML, CSS and JavaScript
+- Git & GitHub
 
-## How the Project Works
+## How It Works
 
-The application follows a simple flow.
+JobPulse follows a simple process:
 
-1. The scraper requests job listings from the Python.org Job Board.
-2. BeautifulSoup extracts the required information.
-3. The extracted data is stored in the database.
-4. The REST API exposes the stored jobs.
-5. Users can search and filter the available job listings.
+1. The scraper collects job listings from the Python.org Job Board.
+2. The relevant information is extracted from each listing.
+3. New listings are saved to the database.
+4. Django REST Framework provides the job data through an API.
+5. The frontend uses the API to display, search and filter jobs.
 
 ## Project Structure
 
@@ -74,21 +65,21 @@ JobScraper/
 └── README.md
 ```
 
-## Installation
+## Getting Started
 
-Clone the repository.
+Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/JobPulse.git
+git clone https://github.com/austindedan222-del/JobPulse.git
 ```
 
-Move into the project directory.
+Enter the project directory:
 
 ```bash
 cd JobPulse
 ```
 
-Create a virtual environment.
+Create a virtual environment:
 
 ```bash
 python -m venv venv
@@ -96,119 +87,111 @@ python -m venv venv
 
 Activate the virtual environment.
 
-**Windows**
+**Windows:**
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Linux or macOS**
+**Linux/macOS:**
 
 ```bash
 source venv/bin/activate
 ```
 
-Install the project dependencies.
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Apply the database migrations.
+Run the database migrations:
 
 ```bash
 python manage.py migrate
 ```
 
-Start the development server.
+Start the development server:
 
 ```bash
 python manage.py runserver
 ```
 
+Open the application at:
+
+```text
+http://127.0.0.1:8000/
+```
+
 ## Running the Scraper
 
-To fetch the latest jobs, run:
+To collect the latest job listings:
 
 ```bash
 python manage.py scrape
 ```
 
-The scraper will download the latest job listings, save new jobs to the database, and skip any jobs that have already been stored.
+Existing jobs are skipped to prevent duplicate records.
 
-## API Endpoints
+## API
 
-List all jobs
+The main API endpoints are:
 
 ```text
-GET /api/jobs/
+GET /jobs/
+GET /jobs/<id>/
 ```
 
-Retrieve a single job
+Search jobs:
 
 ```text
-GET /api/jobs/<id>/
+GET /jobs/?search=python
 ```
 
-Search for jobs
+Filter jobs by location:
 
 ```text
-GET /api/jobs/?search=python
+GET /jobs/?location=Warsaw
 ```
 
-Filter jobs by location
+Search and filter together:
 
 ```text
-GET /api/jobs/?location=Canada
+GET /jobs/?search=python&location=Warsaw
 ```
 
 ## Django Admin
 
-Create an administrator account.
+Create an admin account:
 
 ```bash
 python manage.py createsuperuser
 ```
 
-Then log in at:
+Then visit:
 
 ```text
 http://127.0.0.1:8000/admin/
 ```
 
-The admin dashboard allows you to view and manage all stored job listings.
-
-## What I Learned
-
-Building JobPulse gave me practical experience with:
-
-* Web scraping using BeautifulSoup.
-* Django models and the ORM.
-* Building REST APIs with Django REST Framework.
-* Designing a clean backend architecture.
-* Working with relational databases.
-* Preventing duplicate data.
-* Managing a project with Git and GitHub.
+The Django Admin allows you to view and manage stored job listings.
 
 ## Future Improvements
 
-There are several ways this project could be extended in the future.
+Possible future improvements include:
 
-* Support additional job boards.
-* Extract salary information when available.
-* Add scheduled scraping.
-* Deploy with PostgreSQL.
-* Containerize the project using Docker.
-* Add authentication and user accounts.
-* Allow users to save favourite jobs.
+- Adding more job sources.
+- Adding scheduled scraping.
+- Extracting additional job information such as salary.
+- Deploying the application.
+- Migrating to PostgreSQL for a production environment.
+- Adding user accounts and saved jobs.
 
-## About the Author
+## About
 
 **Dedan Austin**
 
-Computer Science Student
-
-Backend Developer with Python and Django
+Computer Science Student | Backend Developer
 
 GitHub: https://github.com/austindedan222-del
 
